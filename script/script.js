@@ -5,16 +5,36 @@ const controlButtonErase = document.querySelector(".erase");
 const controlButtonClear = document.querySelector(".clear");
 const gridSketchContainer = document.querySelector("#sketch-grid");
 
-// Two loop to create a 10*10 grid with DIV inside the gridSketchContainer.
+
+
+// Dynamic DIV and GRID setup with square class
+const makeDiv = () => {
+    const div = document.createElement("div");
+    div.classList.add("square")
+    return div;
+}
+
 const makeGrid =() => {
     for (let i = 0 ; i < 10 ; i++){
         for (let j = 0 ; j < 10 ; j++){
-        const squareDiv = document.createElement("div");
-        squareDiv.setAttribute("class", "square");
-        gridSketchContainer.appendChild(squareDiv);
+        gridSketchContainer.appendChild(makeDiv());
         }
     }
 }
-
 makeGrid();
 
+
+
+// Basic function to switch black hovering / clicking
+const squares = document.querySelectorAll(".square");
+squares.forEach(square => {
+    square.addEventListener("mouseover", () => {
+        square.classList.add("on-black")
+    })
+})
+
+controlButtonClear.addEventListener("click", () => {
+    squares.forEach(square => {
+        square.classList.remove("on-black")
+    })
+})
