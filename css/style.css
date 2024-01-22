@@ -20,12 +20,26 @@ h2 {
     padding: 20px 10px;
     border-radius: 20px;
     border : 2px solid transparent;
+    transition: transform 250ms;
+    transition: background-color 500ms;
+    transition: color 500ms;
 }
 
+
 .control-button:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: 5px 5px 2px 1px rgba(42, 42, 43, 0.2);
     border-bottom: 2px solid lightgrey;
 }
+
+.black:hover {
+    background-color: #454545;
+    color: whitesmoke;
+}
+
 .rainbow:hover {
+    box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, .2);
     background-color: #8EC5FC;
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
     }
@@ -47,8 +61,11 @@ h2 {
     flex-direction: column;
     gap: 20px;
 }
-
+.control-panel h2 {
+    margin-bottom: 20px;
+}
 .grid h2 {
+    margin-bottom: 20px;
     align-self: center;
 }
 
@@ -70,4 +87,8 @@ h2 {
 
 .on-black {
     background-color: #454545;
+}
+
+.on-rainbow {
+    background-color: purple;
 }
