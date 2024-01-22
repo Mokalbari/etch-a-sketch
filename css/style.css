@@ -14,6 +14,7 @@ h2 {
 }
 
 .control-button {
+    font-size: 1.3rem;;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 600;
     padding: 20px 10px;
@@ -22,7 +23,7 @@ h2 {
 }
 
 .control-button:hover{
-    border: 2px solid black;
+    border-bottom: 2px solid lightgrey;
 }
 .rainbow:hover {
     background-color: #8EC5FC;
@@ -52,8 +53,16 @@ h2 {
 }
 
 #sketch-grid {
-    border: 10px solid black;
     width: 500px;
     height:500px;
     border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Square DIV styling */
+.square {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
 }

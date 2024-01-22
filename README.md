@@ -36,3 +36,24 @@ You can choose to do either one or both of these challenges, it’s up to you.
 // The goal is to create a notepad that when :hover the square changes color (either black/white or rainbow color).
 // The best practice is to create a container div. All remaining div should be created in JS.
 // 
+
+Pseudo Code : 
+Link the script to the DOM
+    Control-button have a const
+    Grid-container have a const
+
+Set up a grid layout using div in javascript.
+    The grid should be 64*64
+    Script should create a div element.
+    The div should be appended to the HTML.
+    Create a function to calculate the area of container.
+    Based on that container create a loop to insert a div.
+    
+Set up a black color mode.
+    All div are "OFF" style -> plain white color with border.
+    When black mode is selected
+    All div :hover get DIV get "ACTIVE" style.
+
+Set up a clear mode.
+    When "clear" button is on
+        All DIV go back to "OFF" style
