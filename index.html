@@ -4,11 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-sketch</title>
-    <link rel="stylesheet" href="../etch-a-sketch/css/css-reset.css">
-    <link rel="stylesheet" href="../etch-a-sketch/css/style.css">
+    <link rel="stylesheet" href="./css/css-reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="../etch-a-sketch/script/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <header>
+        <div class="container title">
+            <h1>Etch-a-sketch</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="container page-size">
+                <div class="container control-panel">
+                    <h2>Control panel</h2>
+                    <button class="control-button black">Black color</button>
+                    <button class="control-button rainbow">Rainbow</button>
+                    <button class="control-button erase">Erase</button>
+                    <button class="control-button clear">Clear</button>
+                </div>
+                <div class="container grid">
+                    <h2>Draw something </h2>
+                    <div id="sketch-grid"></div>
+                </div>
+        </div>
+        </div>
+    </main>
 </body>
 </html>

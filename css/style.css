@@ -1,0 +1,59 @@
+/* Fonts, margin and padding for titles, buttons */
+h1, h2 {
+    font-family: 'Rubik Mono One', monospace;
+}
+
+h1 {
+    font-size: 4rem;
+    padding: 20px;
+    margin: 50px;
+}
+
+h2 {
+    font-size : 2rem;
+}
+
+.control-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    padding: 20px 10px;
+    border-radius: 20px;
+    border : 2px solid transparent;
+}
+
+.control-button:hover{
+    border: 2px solid black;
+}
+.rainbow:hover {
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+    }
+
+/* Sizing flexbox container around page */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.page-size {
+    width: 60vw;
+    justify-content: space-around;
+    align-items: flex-start;
+
+}
+
+.control-panel, .grid {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.grid h2 {
+    align-self: center;
+}
+
+#sketch-grid {
+    border: 10px solid black;
+    width: 500px;
+    height:500px;
+    border-radius: 5px;
+}
