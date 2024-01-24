@@ -23,18 +23,38 @@ const makeGrid =() => {
 }
 makeGrid();
 
+//Track of boolean value for buttons
+let isRainbowMode=false;
+let isBlackMode=true;
+
+controlButtonRainbow.addEventListener("click", () => {
+    isRainbowMode=true;
+    isBlackMode=false;
+})
+
+controlButtonBlack.addEventListener("click", () => {
+    isBlackMode=true;
+    isRainbowMode=false;
+})
 
 
-// Basic function to switch black hovering / clicking
+// Function to switch black hovering / clicking
 const squares = document.querySelectorAll(".square");
 squares.forEach(square => {
     square.addEventListener("mouseover", () => {
-        square.classList.add("on-black")
+        if (isRainbowMode===true){
+            square.classList.add("on-rainbow")
+            square.classList.remove("on-black")
+        } else {
+            square.classList.add("on-black")
+            square.classList.remove("on-rainbow")
+        }
     })
 })
 
 controlButtonClear.addEventListener("click", () => {
     squares.forEach(square => {
-        square.classList.remove("on-black")
+        square.classList.remove("on-black");
+        square.classList.remove("on-rainbow");
     })
 })
