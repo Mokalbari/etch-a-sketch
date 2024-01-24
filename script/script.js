@@ -21,7 +21,21 @@ userGridSelection.addEventListener("input", () => {
 
 // Dynamic DIV and GRID setup with square class
 const makeDiv = () => {
-    const div = document.createElement("div");
+    const div = document.createElement("div")
+    div.addEventListener("mouseover", () => {
+        const squares = document.querySelectorAll(".square-10");
+        squares.forEach(square => {
+            square.addEventListener("mouseover", () => {
+                if (isRainbowMode===true){
+                    square.classList.add("on-rainbow")
+                    square.classList.remove("on-black")
+                } else {
+                    square.classList.add("on-black")
+                    square.classList.remove("on-rainbow")
+                }
+            })
+        })
+    })
     if (gridSize===10){
         div.classList.add("square-10");
         div.classList.remove("square-50");
@@ -66,19 +80,68 @@ controlButtonBlack.addEventListener("click", () => {
 
 
 // Function to switch black hovering / clicking
-
-let squares = document.querySelectorAll(".square-10");
-squares.forEach(square => {
-    square.addEventListener("mouseover", () => {
-        if (isRainbowMode===true){
-            square.classList.add("on-rainbow")
-            square.classList.remove("on-black")
-        } else {
-            square.classList.add("on-black")
-            square.classList.remove("on-rainbow")
-        }
-    })
+let squares
+makeDiv.addEventListener("change", () => {
+    if (gridSize===10){
+        squares = document.querySelectorAll(".square-10");
+        squares.forEach(square => {
+            square.addEventListener("mouseover", () => {
+                if (isRainbowMode===true){
+                    square.classList.add("on-rainbow")
+                    square.classList.remove("on-black")
+                } else {
+                    square.classList.add("on-black")
+                    square.classList.remove("on-rainbow")
+                }
+            })
+        })
+    } else if (gridSize===50) {
+        squares = document.querySelectorAll(".square-50");
+        squares.forEach(square => {
+            square.addEventListener("mouseover", () => {
+                if (isRainbowMode===true){
+                    square.classList.add("on-rainbow")
+                    square.classList.remove("on-black")
+                } else {
+                    square.classList.add("on-black")
+                    square.classList.remove("on-rainbow")
+                }
+            })
+        })
+    } else if (gridSize===100) {
+        squares = document.querySelectorAll(".square-100");
+        squares.forEach(square => {
+            square.addEventListener("mouseover", () => {
+                if (isRainbowMode===true){
+                    square.classList.add("on-rainbow")
+                    square.classList.remove("on-black")
+                } else {
+                    square.classList.add("on-black")
+                    square.classList.remove("on-rainbow")
+                }
+            })
+        })
+    }
 })
+
+
+
+
+
+
+
+// squares = document.querySelectorAll(".square-10");
+// squares.forEach(square => {
+//     square.addEventListener("mouseover", () => {
+//         if (isRainbowMode===true){
+//             square.classList.add("on-rainbow")
+//             square.classList.remove("on-black")
+//         } else {
+//             square.classList.add("on-black")
+//             square.classList.remove("on-rainbow")
+//         }
+//     })
+// })
 
 controlButtonClear.addEventListener("click", () => {
     squares.forEach(square => {
