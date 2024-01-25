@@ -2,7 +2,7 @@
 const colorButtonBlack = document.querySelector(".black");
 const colorButtonRainbow = document.querySelector(".rainbow");
 const colorButtonErase = document.querySelector(".erase");
-const ButtonClear = document.querySelector(".clear");
+const buttonClear = document.querySelector(".clear");
 const gridSketchContainer = document.querySelector("#sketch-grid");
 const getUserGridSize = document.querySelector("#grid-selection");
 
@@ -12,7 +12,6 @@ const getUserGridSize = document.querySelector("#grid-selection");
 let gridSize = 10;
 const updateGridSize = () => {
     gridSize = +getUserGridSize.value
-    console.log(`the grid size is ${gridSize}`)
 }
 getUserGridSize.addEventListener("change", updateGridSize)
 
@@ -52,9 +51,11 @@ const makeDiv = () => {
         } else if (trackColor==="rainbow"){
             div.classList.remove("on-black");
             div.classList.add("on-rainbow");
+            div.style.backgroundColor = pickRandomColor();
         } else if (trackColor==="blank"){
             div.classList.remove("on-black");
             div.classList.remove("on-rainbow");
+            div.style.backgroundColor = "";
         } else {
             div.classList.add("on-black");
             div.classList.remove("on-rainbow");
@@ -63,6 +64,14 @@ const makeDiv = () => {
     return div;
 }
 
+// Create a function to pick a random color from array
+// Assign the newly picked color to a var
+// Random color is assign to "on-rainbow" CSS STYLE background color and border
+const rainbowColorPalette=["#A8E6CF", "#DCEDC1", "#FFD3B6", "#FFAAA5", "#FF8B94"];
+const pickRandomColor = () => {
+    let color = rainbowColorPalette[Math.floor(Math.random()*rainbowColorPalette.length)];
+    return color;
+}
 
 // The div is appended to the sketch container with a grid function.
 // // When the grid size is updated by the user
@@ -83,7 +92,17 @@ getUserGridSize.addEventListener("change", () => {
 });
 
 
+makeGrid(10);
 
+// Select all square-10, square-50, square-100
+// When Clear button is clicked
+// // Remove for each square the class on black and and rainbow.
+const clearArea = () => {
+    const squares = document.querySelectorAll(".square-10, .square-50, .square-100");
+    squares.forEach((square) => {
+        square.classList.remove("on-black", "on-rainbow");
+        square.style.backgroundColor="";
+    })
+}
 
-// When "Clear" is clicked
-// // Switch div back to initial state
+ buttonClear.addEventListener("click", clearArea)

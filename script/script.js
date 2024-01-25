@@ -4,7 +4,7 @@ const controlButtonRainbow = document.querySelector(".rainbow");
 const controlButtonErase = document.querySelector(".erase");
 const controlButtonClear = document.querySelector(".clear");
 const gridSketchContainer = document.querySelector("#sketch-grid");
-const userGridSelection = document.querySelector("#grid-selection")
+const userGridSelection = document.querySelector("#grid-selection");
 
 //The value from the user input is stored in a variable.
 //Every time the input changes, the value is changed.
